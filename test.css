@@ -1,0 +1,14 @@
+.but{
+    font: 100;
+    padding-left: 100%;
+    color: aliceblue;
+    background-color: blue;
+
+}
+.out{
+
+    background-color:red;
+    width: 50%;
+    height: 25px;
+
+}

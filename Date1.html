@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+<body>
+  <h1>current time</h1>
+   <button onclick="msg()" id="demo">btn</button> 
+   <br>
+   <span id="F1"></span>
+   <br>
+<button onclick="his">history</button>
+<span id="navi-ver"></span>
+<br>
+<span id="navi-code"></span>
+<br>
+<span id="scr-availWidth"></span>
+<br>
+<input type="text" id="valuee">
+<p id="t"></p>
+
+  <script>
+  let msg = () => {//arrow function
+     let date = new Date();//creating date object
+      let H = date.getHours();
+      let M = date.getMinutes();
+      let S = date.getSeconds();
+      document.getElementById("demo").value = date;
+    }
+
+      document.getElementById("navi-code").innerHTML=navigator.appCodeName;
+      document.getElementById("navi-ver").innerHTML=navigator.appVersion;
+      document.getElementById("scr-availWidth").innerHTML=screen.availWidth;
+      document.getElementById("valuee").value="sivabharath ";
+
+
+//       let x = ()=>{
+//     // alert("hello World");
+//     console.log("this is an Arrow Function");
+//     document.getElementById("F1").innerHTML=a+b;
+// }
+
+
+  let a =5;
+  let b =6;
+  document.getElementById("t").innerHTML=a+b
+
+    </script>
+ 
+
+</body>
+</html> 

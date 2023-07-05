@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Category with Inputs and Dynamic Dropdown</title>
+  <style>
+    .category {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="category">
+    <h2>Category 1</h2>
+    <form>
+      <label for="input1">Input 1:</label>
+      <input type="text" id="input1" name="input1"><br>
+      
+      <label for="input2">Input 2:</label>
+      <input type="text" id="input2" name="input2"><br>
+      
+      <label for="dropdown">Dropdown:</label>
+      <select id="dropdown" name="dropdown"></select><br>
+      
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <div class="category">
+    <h2>Category 2</h2>
+    <form>
+      <label for="input3">Input 3:</label>
+      <input type="text" id="input3" name="input3"><br>
+      
+      <label for="input4">Input 4:</label>
+      <input type="text" id="input4" name="input4"><br>
+      
+      <label for="dropdown2">Dropdown 2:</label>
+      <select id="dropdown2" name="dropdown2"></select><br>
+      
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script>
+    // Simulating fetching data for the dropdown options
+    // Replace this with your own logic to fetch data from a data source
+    function fetchDropdownData(callback) {
+      setTimeout(function() {
+        const data = [
+          { value: "option1", label: "Option 1" },
+          { value: "option2", label: "Option 2" },
+          { value: "option3", label: "Option 3" }
+        ];
+        callback(data);
+      }, 1000);
+    }
+
+    // Populate the dropdown with fetched data
+    function populateDropdown(dropdownId, data) {
+      const dropdown = document.getElementById(dropdownId);
+      
+      data.forEach(function(option) {
+        const optionElement = document.createElement("option");
+        optionElement.value = option.value;
+        optionElement.textContent = option.label;
+        dropdown.appendChild(optionElement);
+      });
+    }
+
+    // Fetch data and populate the dropdown
+    fetchDropdownData(function(data) {
+      populateDropdown("dropdown", data); // Replace "dropdown" with your actual dropdown ID
+      populateDropdown("dropdown2", data); // Replace "dropdown2" with your actual dropdown ID
+    });
+  </script>
+</body>
+</html>
