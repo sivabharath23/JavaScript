@@ -9,3 +9,13 @@ if(number<=500){
 }
 }
 show();
+
+let n=1
+let x = ()=>{
+    console.log("hi")
+    n++;
+    if(n<=5){
+    x();
+    }
+}
+x();
