@@ -26,9 +26,15 @@
         </from>
 
         <p id = para style="display: none;">The enterd datas are retrieved</p>
+        <p id=2></p>
     </div>
 
     <script>
+
+        window.onload = function(){
+            let a = document.getElememtByid.innerHTML="hey there"
+            console.log(a);
+        }
 
     function submit() {
         let firstName = document.getElementById('firstName').value;
@@ -44,5 +50,7 @@
             console.log(text);
             alert("You are submitting the form.");
     }
+       submit();
+
 </script>
 </body>
