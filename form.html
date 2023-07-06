@@ -32,12 +32,16 @@
 
     <script>
 
-        window.onload = function(){
-            document.getElememtById("load").innerHTML= Date();
+        window.onload = function()
+        {
+            let data = new Date();
+            let a = document.getElementById("load").innerHTML = data.getDate()+" "+data.getMonth()+" "+ data.getFullYear();
+            console.log(a);
         }
 
-    function submit() {
-        let firstName = document.getElementById('firstName').value;
+    function submit() 
+    {
+            let firstName = document.getElementById('firstName').value;
             let lastName = document.getElementById('lastName').value;
             let email = document.getElementById('email').value;
             let password = document.getElementById('password').value;
@@ -50,6 +54,6 @@
             console.log(text);
             alert("You are submitting the form.");
     }
-
+    
 </script>
 </body>
