@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>forms</title>
+    <style>
+        input{
+             margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <from>
+            <label>FirstName : </label>
+            <input id="firstName" type="text" ></input>
+
+            <label>LastName : </label>
+            <input id="lastName" type="text" ></input><br>
+
+            <label>email : </label>
+            <input id="email" type="email" ></input><br>
+
+            <label>Password : </label>
+            <input id ="password" type="password" ></input><br>
+
+            <button onclick="submit()">Submit</button>
+        </from>
+
+        <p id = para style="display: none;">The enterd datas are retrieved</p>
+    </div>
+
+    <script>
+
+    function submit() {
+        let firstName = document.getElementById('firstName').value;
+            let lastName = document.getElementById('lastName').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+
+            let text = document.getElementById('para').innerHTML;
+            console.log("First Name:", firstName);
+            console.log("Last Name:", lastName);
+            console.log("Email:", email);
+            console.log("Password:", password.length>8?"strong":"weak");
+            console.log(text);
+            alert("You are submitting the form.");
+    }
+</script>
+</body>
