@@ -1,0 +1,51 @@
+<!-- //form validation -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FormValidation</title>
+    </head>
+
+    <body>
+        <h1>Registration form</h1>
+       Name : <input type="text" id="name"><br>
+       Email : <input type="email" id="mail"><br>
+       Password : <input type ="password" id="pass"><br>
+       Re-enter Password : <input type ="password" id="REpass">
+       <input type="submit" onclick="validate()">
+       <p id="submited"></p>
+       <script>
+        
+
+        let validate = ()=> {
+
+            var Name = document.getElementById("name").value
+            var Pass = document.getElementById("pass").value
+            var Email = document.getElementById("mail").value
+            var REpass = document.getElementById("REpass").value
+
+            if(Name==="" || Pass==="" || Email==="" || REpass===""){
+               alert("enter registraion details ");
+            }
+            // else if(Name===""){
+            //     alert("Enter the UserName");
+            // }
+            // else if(Pass===""){
+            //     alert("Enter Password");
+            // }
+            else if(Pass.length<8){
+                    alert("Weak Password");
+            }else if(Pass !== REpass){
+                alert("password doesnot Match")
+            }
+            else if(Pass===REpass){
+                window.location.href = "/Registration.html";
+                console.log("UserName" ,Name);
+                console.log("PasswordEnterd" ,Pass)
+            }
+
+            console.log("UserName" ,Name);
+                console.log("PasswordEnterd" ,Pass)
+    }
+       </script>
+    </body>
+</html>

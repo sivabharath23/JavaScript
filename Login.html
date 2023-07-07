@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Password Validation</title>
+        
+    </head>
+    <body>
+        <div>
+            <form>
+                Name : <input type="text" id="name"><br>
+                Password : <input type="password" id="password"><br>
+                <span id="weak"></span>
+                <input type="submit"  onclick="passmatch()">
+                <span id="details" style="display: none;">Login sucessfully</span>
+            </form>
+        </div>
+        <script>
+            let passmatch = () => {
+                let name = document.getElementById("name").value;
+                let pass = document.getElementById("password").value;
+
+                let testpassed = document.getElementById("details").textContent;
+
+                if(name ==="" && pass===""){
+                    alert("Enter Login Details")
+                }
+            
+                else if (name === "Sivabharath" && pass !== "12345678")
+                {
+                    alert("Incorrect Password");
+                }
+
+                else if(name !== "Sivabharath" || pass !== "12345678"){
+                    alert("incorrect UserName or PassWord");
+                }
+        
+                else if (name === "Sivabharath" && pass === "12345678")
+                 {
+                     
+                    // alert("login sucessfully");
+                    testpassed.show;
+                } 
+                
+            }
+        </script>
+    </body>
+</html>
