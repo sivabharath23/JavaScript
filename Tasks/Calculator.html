@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calcualator</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="disp" name="displayer" />
+      <input type="button" id="clr" value="clear" onclick="displayer.value = ''" />
+      <br>
+
+      <input type="button" value="1" onclick="displayer.value += '1'" />
+      <input type="button" value="2" onclick="displayer.value += '2'" />
+      <input type="button" value="3" onclick="displayer.value += '3'" />
+      <input type="button" value="+" onclick="displayer.value += '+'" /> 
+      <br>
+
+      <input type="button" value="4" onclick="displayer.value += '4'" />
+      <input type="button" value="5" onclick="displayer.value += '5'" />
+      <input type="button" value="6" onclick="displayer.value += '6'" />
+      <input type="button" value="-" onclick="displayer.value += '-'" />
+      <br>
+
+      <input type="button" value="7" onclick="displayer.value += '7'" />
+      <input type="button" value="8" onclick="displayer.value += '8'" />
+      <input type="button" value="9" onclick="displayer.value += '9'" />
+      <input type="button" value="*" onclick="displayer.value += '*'" />
+      <br>
+
+      <input type="button" value="0" onclick="displayer.value += '0'" />
+      <input type="button" value="." onclick="displayer.value += '.'" />
+      <input type="button" value="_" onclick="displayer.value += '_'" />
+      <input type="button" value="/" onclick="displayer.value += '/'" />
+      <br>
+
+      <input type="button" value="=" onclick="displayer.value = eval(displayer.value)" />
+    </form>
+
+    <script>
+    //   let cleardisplayer = () => {
+    //     document.getElementById("disp").value = "";
+    //   };
+    </script>
+  </body>
+</html>

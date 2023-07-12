@@ -11,7 +11,7 @@
                 Password : <input type="password" id="password"><br>
                 <span id="weak"></span>
                 <input type="submit"  onclick="passmatch()">
-                <span id="details" style="display: none;">Login sucessfully</span>
+                <span id="details">login</span>
             </form>
         </div>
         <script>
@@ -19,28 +19,21 @@
                 let name = document.getElementById("name").value;
                 let pass = document.getElementById("password").value;
 
-                let testpassed = document.getElementById("details").textContent;
-
                 if(name ==="" && pass===""){
-                    alert("Enter Login Details")
+                    alert("enter the details first");
                 }
             
-                else if (name === "Sivabharath" && pass !== "12345678")
+                 if (name === "Sivabharath" && pass !== "12345678")
                 {
                     alert("Incorrect Password");
                 }
 
-                else if(name !== "Sivabharath" || pass !== "12345678"){
-                    alert("incorrect UserName or PassWord");
-                }
-        
-                else if (name === "Sivabharath" && pass === "12345678")
+                if(name === "Sivabharath" && pass === "12345678")
                  {
-                     
-                    // alert("login sucessfully");
-                    testpassed.show;
-                } 
-                
+                    window.location.href = "Print.html";
+                    document.getElementById("details").textContent="matching";
+                //    alert("logined sucessfully");
+                }   
             }
         </script>
     </body>

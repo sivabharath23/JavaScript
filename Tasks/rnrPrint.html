@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table Data Extraction</title>
+
+	    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+	 <link rel="stylesheet" href="/css/printer.css">
+	<style>
+	 @media print {
+        body {
+			visibility: visible !important;
+		}
+		.print-content {
+			visibility: hidden;
+		}
+	}
+
+	body {
+		font-family: sans-serif;
+		margin-top: 0px !important;
+	}
+
+		.table-class {
+			min-width: 380px !important;
+			max-width: 380px !important;
+		}
+		.text-left {
+			text-align: left !important;
+		}
+		.text-center {
+			text-align: center !important;
+		}
+		.text-right {
+			text-align: right !important;
+		}
+		.store_name {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-size:30px;
+		}
+		.company_name {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-size:25px;
+		}
+		.address {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-weight: normal;
+			font-size:20px;
+		}
+		.city_pincode {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-weight: normal;
+			font-size:20px;
+		}
+		.phone {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-size:20px;
+		}
+		.mail {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-weight: normal;
+		}
+		.gst {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-weight: 100;
+		}
+		.take_away {
+			margin-bottom: 10px;
+			font-size:20px;
+			margin-top: 5px;
+		}
+		.customer, .customer-phNo {
+			margin-top: 10px;
+			font-size:15px;
+			margin-bottom: 5px;
+		}
+		.bill_no {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.kot_bill {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-weight: normal;
+			font-size:18px;	
+		}
+		thead tr th, thead tr td {
+			border-bottom: 2px dotted #000 !important;
+			font-size: 18px;
+		}
+		.no_of_items {
+			border-top: 2px dotted #000;
+		}
+		.sub_total {
+			border-top: 2px dotted #000;
+		}
+		.sub_total_value {
+			border-top: 2px dotted #000;
+		}
+		.total_amount {
+			border-top: 2px dotted #000;
+			border-bottom: 2px dotted #000;
+			font-size: 18px;
+		}
+		.total_amount_value {
+			border-top: 2px dotted #000;
+			border-bottom: 2px dotted #000;
+			font-size: 25px;
+		}
+		.return_balance {
+			border-top: 2px dotted #000;
+			 border-bottom: 2px dotted #000; 
+			font-size: 18px;
+		}
+		.return_balance_value {
+			border-top: 2px dotted #000;
+			border-bottom: 2px dotted #000;
+			font-size: 18px;
+		}
+		.thank_you_note {
+			padding-top: 20px;
+		}
+		.kot_No {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.bill_kot {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-weight: normal;
+		}		
+		.bill_table {
+			margin-top: 0px;
+		}
+		.Kot_table {
+			margin-top: 20px;
+			width: 100%;
+		}
+		.date_time {
+			font-size:14px;		
+		}
+		.d-none{
+			display:none !important;
+		}
+		td{
+			font-size:20px;
+		} 
+		.w-200 {
+			width:200px;
+		}
+		.balance_value, .balance_amount {
+		    /* border-top: 2px dotted #000; */
+		    border-bottom: 2px dotted #000;
+		    font-size: 18px;
+		}
+	
+    @media print {
+        /* CSS rules for printing */
+body{
+			font-family: sans-serif;
+		}
+		.table-class {
+			min-width: 280px !important; /*changes done here*/
+			max-width: 280px !important;
+		}
+		.text-left {
+			text-align: left !important;
+		}
+		.text-center {
+			text-align: center !important;
+		}
+		.text-right {
+			text-align: right !important;
+		}
+		.store_name {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-size:30px;
+		}
+		.company_name {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-size:25px;
+		}
+		.address {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-weight: normal;
+			font-size:20px;
+		}
+		.city_pincode {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-weight: normal;
+			font-size:20px;
+		}
+		.phone {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-size:20px;
+		}
+		.mail {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-weight: normal;
+		}
+		.gst {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-weight: 100;
+		}
+		.take_away {
+			margin-bottom: 10px;
+			font-size:20px;
+			margin-top: 5px;
+		}
+		.customer, .customer-phNo {
+			margin-top: 10px;
+			font-size:15px;
+			margin-bottom: 5px;
+		}
+		.bill_no {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.kot_bill {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-weight: normal;
+			font-size:18px;	
+		}
+		thead tr th, thead tr td {
+			border-bottom: 2px dotted #000 !important;
+			font-size: 18px;
+		}
+		.no_of_items {
+			border-top: 2px dotted #000;
+		}
+		.sub_total {
+			border-top: 2px dotted #000;
+		}
+		.sub_total_value {
+			border-top: 2px dotted #000;
+		}
+		.total_amount {
+			border-top: 2px dotted #000;
+			border-bottom: 2px dotted #000;
+			font-size: 18px;
+		}
+		.total_amount_value {
+			border-top: 2px dotted #000;
+			border-bottom: 2px dotted #000;
+			font-size: 25px;
+		}
+		.return_balance {
+			border-top: 2px dotted #000;
+			border-bottom: 2px dotted #000;
+			font-size: 18px;
+		}
+		.return_balance_value {
+			border-top: 2px dotted #000;
+			border-bottom: 2px dotted #000;
+			font-size: 18px;
+		}
+		.thank_you_note {
+			padding-top: 20px;
+		}
+		.kot_No {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.bill_kot {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-weight: normal;
+		}		
+		.bill_table {
+			margin-top: 0px;
+		}
+		.Kot_table {
+			margin-top: 20px;
+			width: 100%;
+		}
+		.date_time {
+			font-size:14px;		
+		}
+		.d-none{
+			display:none !important;
+		}
+		td{
+			font-size:20px;
+		}		
+		.w-200 {
+			width:200px;
+		}
+		.balance_value, .balance_amount {
+		    /* border-top: 2px dotted #000; */
+		    border-bottom: 2px dotted #000;
+		    font-size: 18px;
+		}
+    }
+
+	</style>
+	
+</head>
+
+ <body>
+	<div class="table-class">
+		<table class="table bill_table" style="width:100%">
+			<thead>
+				<tr>
+					<th class="text-center" colspan="6">
+						<h2 class="store_name d-none">RNR Chicken</h2>
+						<h3 class="company_name">RNR Poultry Farm</h3>
+						<h4 class="address d-none">Veerbhadra Swamy layout, Doddannagamangala main road, Electronic City phase 2</h4>
+						<h4 class="address">Doddannagamangala</h4>
+						<h4 class="city_pincode">Bangalore <span>-</span> 560100</h4>
+						<h4 class="phone">Mob : <span>+91 99727 51149</span></h4>
+						<!-- <h4 class="mail">Mail : <span>support@rnr.com</span></h4>
+						<h4 class="gst">GST IN : <span>AZ234KF232349</span></h4> -->
+						<h4 class="customer">Customer : <span id="customer"></span></h4>
+						<h4 class="customer-phNo">Customer-Mob : <span id="customer-phNo"></span></h4>
+						<h3 class="take_away">***Invoice***</h3>
+						<h3 class="bill_no">Bill No. <span id="bill_No" >19328</span></h3>
+						<h4 class="kot_bill d-none">KOT No. : <span>594</span></h4>
+					</th>
+				</tr>
+				<tr>
+					<td colspan="2" class="text-left">Date & Time</td>
+					<th colspan="4" class="text-left">: <span class="date_time" id="date_time">31/03/2023 11:45:30 AM</span></th>
+				</tr>
+				<tr>
+					<td colspan="2" class="text-left">Cashier</td>
+					<th colspan="4" class="text-left">: <span class="cashier">Gunasekaran</span></th>
+				</tr>
+				<tr>
+					<th class="text-center Item-Name" colspan="2">Item Name</th>
+					<th class="text-right Qty">Qty</th>
+					<th class="text-center UOM">UOM</th>
+					<th class="text-right Rate">Rate</th>
+					<th class="text-center Amount">Amount</th>
+				</tr>
+			</thead>
+			<tbody  id="displayArea"></tbody>
+			<tbody id="displayArea1"></tbody>
+			<tbody>
+		           <tr>
+			           <th colspan='4' class='text-right previous_balance'>Previous Balance : </th>
+			           <th colspan='2' class='text-right revious_balance_value' id='previous_balance'></th>
+		           </tr>
+		           <tr>
+			           <th colspan='4' class='text-right received_amount'>Received Amount : </th>
+			           <th colspan='2' class='text-right received_value' id='received_amount'></th>
+		           </tr>  
+		           <tr>
+			           <th colspan='4' class='text-right balance_amount'>Balance Amount: </th>
+			           <th colspan='2' class='text-right balance_value' id='balance_amount'></th>
+		           </tr>
+		           
+		           
+		           <tr>
+		               <th colspan='6'><img class='w-200' src='images/scanner.png' /></th>
+		           </tr>
+		           <tr> 
+		               <td colspan='6' class='text-center thank_you_note'>*** Thank You !!! Visit Again !!! ***</td>
+		            </tr>
+			</tbody>
+		</table>
+	</div>
+
+	<button id="print-button" onclick="printData()">Print Data</button>
+    <script>
+      function printData() {
+    var printContent = document.querySelector('.table-class');
+
+    // Hide the print button
+    document.getElementById('print-button').style.display = 'none';
+
+    // Show the content to be printed
+    printContent.style.visibility = 'visible';
+
+    // Print the page
+    window.print();
+
+    // Reset the visibility and show the print button
+    printContent.style.visibility = 'hidden';
+    document.getElementById('print-button').style.display = 'block';
+}
+    </script>
+</body>
+</html>

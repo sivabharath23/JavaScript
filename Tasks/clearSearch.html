@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <form>
+      <input type="text" name="display" value="sivabharath" placeholder="search here" id="clr" />
+      <input type="button" value="Clear" onclick="display.value = ''" /><br />
+    </form>
+    <span id="view">Clear the Searchbar</span>
+    <script>
+      let clearInp = () => {
+        document.getElementById("clr").value = "";
+        document.getElementById("view").textContent = "Search Cleared";
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Date check</title>
+    <head>
+      <body>
+        <span id="demo"></span>
+
+        <input type="date" id="inpdate"/>
+        <br />
+        <input type="submit" onclick="submit()" value="Done" />
+        <br />
+        <input type="submit" onclick="Retrive()" value="Retrive Date" />
+
+        <p id="ret"></p>
+        <script>
+          let Userdate;// we can access globally by giving outside of 
+          let submit = () => {
+            Userdate = document.getElementById("inpdate").value;
+            console.log("Date User Enterd", Userdate);
+          };
+
+          
+          
+
+          let Retrive = () => {
+            let dateObj = new Date(Userdate); //using the input date by user
+            let dd = dateObj.getDate();
+            let mm = dateObj.getMonth() + 1;//add +1 while retreving it reduced to -1 so add 1
+            let yyy = dateObj.getFullYear();
+
+            document.getElementById("ret").innerHTML = dd + "-" + mm + "-" + yyy;
+          };
+        </script>
+      </body>
+    </head>
+  </head>
+</html>

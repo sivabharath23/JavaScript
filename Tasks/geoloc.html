@@ -1,0 +1,17 @@
+<!-- web API -->
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <p id="loc"></p>
+    <script>
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        document.getElementById("loc").innerHTML =
+          "Latitude: " + latitude + "<br>Longitude: " + longitude;
+      });
+    </script>
+  </body>
+</html>

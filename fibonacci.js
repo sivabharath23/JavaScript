@@ -33,6 +33,8 @@ let loopMeth = (N1) => {
     return output;
 }
 
+
+
 console.log(loopMeth(0))
 
 

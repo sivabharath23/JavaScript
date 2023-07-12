@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Password Validation</title>
+  </head>
+  <body>
+    <div>
+      <form>
+        Name : <input type="text" id="name" /><br />
+        Password : <input type="password" id="password" /><br />
+        <input type="submit" onclick="passMatch()" />
+        <span id="weak">password match?</span>
+      </form>
+    </div>
+    <script>
+      document.getElementById("weak").textContent = "Password not matching";
+      let passMatch = () => {
+        let name = document.getElementById("name").value;
+        let pass = document.getElementById("password").value;
+
+        if (name === "Sivabharath" && pass === "12345678") {
+          //   console.log(name + pass);
+          window.location.href = "index.html";
+          document.getElementById("weak").textContent = "yes";
+        } else if (name === "Sivabharath" && pass !== "12345678") {
+        } else {
+          alert("Username or Password is wrong");
+        }
+      };
+    </script>
+  </body>
+</html>
