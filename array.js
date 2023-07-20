@@ -21,3 +21,10 @@ var hi = "hello";
     alert("the function");
   }
 msg();
+
+let arr = [1,3,5,6,8,9,11,10,33,64];
+for(let i=0;i<arr.length;i++){
+   if(arr[i]==10){
+        console.log("i got 10");
+    }
+}

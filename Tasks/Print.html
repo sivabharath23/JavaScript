@@ -3,13 +3,12 @@
 	<head><title>Print the page</title></head>
 	<body>
 		<p>Print this content after clicking</p>
-		<p  onclick="one.style.display='none'">this is duplicate content so please click</p> 
+		<p  onclick="style.display='none'">this is duplicate content so please click</p> 
 		<input type="submit" value="Print" onclick="printing()" id="print-btn">
 		<script>
 			let printing = () =>{
 				 document.getElementById('print-btn').style.display = "none";//hiding the print button while printing
 				window.print()
-
 			}
 		</script>
 	</body>

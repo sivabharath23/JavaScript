@@ -14,4 +14,3 @@ arr.forEach((a,b)=>{
 arr.forEach((a) => {
     console.log(a);
 })
-

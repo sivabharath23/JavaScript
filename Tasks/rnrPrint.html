@@ -166,8 +166,8 @@ body{
 			font-family: sans-serif;
 		}
 		.table-class {
-			min-width: 280px !important; /*changes done here*/
-			max-width: 280px !important;
+			min-width: 290px !important; /*changes done here*/
+			max-width: 290px !important;
 		}
 		.text-left {
 			text-align: left !important;
@@ -311,13 +311,13 @@ body{
 </head>
 
  <body>
-	<div class="table-class">
+	<div class="table-clear">
 		<table class="table bill_table" style="width:100%">
 			<thead>
 				<tr>
 					<th class="text-center" colspan="6">
 						<h2 class="store_name d-none">RNR Chicken</h2>
-						<h3 class="company_name">RNR Poultry Farm</h3>
+						<h3 class="company_name">SIVABHARATH </h3>
 						<h4 class="address d-none">Veerbhadra Swamy layout, Doddannagamangala main road, Electronic City phase 2</h4>
 						<h4 class="address">Doddannagamangala</h4>
 						<h4 class="city_pincode">Bangalore <span>-</span> 560100</h4>
@@ -374,24 +374,120 @@ body{
 		</table>
 	</div>
 
-	<button id="print-button" onclick="printData()">Print Data</button>
+	<!-- <button id="print-button" onclick="printData()">Print Data</button> -->
+
+
+	<div class="table-class">
+		<table class="table bill_table" style="width:100%">
+			<thead>
+				<tr>
+					<th class="text-center" colspan="6">
+						<h2 class="store_name d-none">RNR Chicken</h2>
+						<h3 class="company_name">RNR Poultry Farm</h3>
+						<h4 class="address d-none">Veerbhadra Swamy layout, Doddannagamangala main road, Electronic City phase 2</h4>
+						<h4 class="address">Doddannagamangala</h4>
+						<h4 class="city_pincode">Bangalore <span>-</span> 560100</h4>
+						<h4 class="phone">Mob : <span>+91 99727 51149</span></h4>
+						<!-- <h4 class="mail">Mail : <span>support@rnr.com</span></h4>
+						<h4 class="gst">GST IN : <span>AZ234KF232349</span></h4> -->
+						<h4 class="customer">Customer : <span id="customer"></span></h4>
+						<h4 class="customer-phNo">Customer-Mob : <span id="customer-phNo"></span></h4>
+						<h3 class="take_away">***Invoice***</h3>
+						<h3 class="bill_no">Bill No. <span id="bill_No" >19328</span></h3>
+						<h4 class="kot_bill d-none">KOT No. : <span>594</span></h4>
+					</th>
+				</tr>
+				<tr>
+					<td colspan="2" class="text-left">Date & Time</td>
+					<th colspan="4" class="text-left">: <span class="date_time" id="date_time">31/03/2023 11:45:30 AM</span></th>
+				</tr>
+				<tr>33
+					<td colspan="2" class="text-left">Cashier</td>
+					<th colspan="4" class="text-left">: <span class="cashier">Gunasekaran</span></th>
+				</tr>
+				<tr>
+					<th class="text-center Item-Name" colspan="2">Item Name</th>
+					<th class="text-right Qty">Qty</th>
+					<th class="text-center UOM">UOM</th>
+					<th class="text-right Rate">Rate</th>
+					<th class="text-center Amount">Amount</th>
+				</tr>
+			</thead>
+			<tbody  id="displayArea"></tbody>
+			<tbody id="displayArea1"></tbody>
+			<tbody>
+		           <tr>
+			           <th colspan='4' class='text-right previous_balance'>Previous Balance : </th>
+			           <th colspan='2' class='text-right revious_balance_value' id='previous_balance'></th>
+		           </tr>
+		           <tr>
+			           <th colspan='4' class='text-right received_amount'>Received Amount : </th>
+			           <th colspan='2' class='text-right received_value' id='received_amount'></th>
+		           </tr>  
+		           <tr>
+			           <th colspan='4' class='text-right balance_amount'>Balance Amount: </th>
+			           <th colspan='2' class='text-right balance_value' id='balance_amount'></th>
+		           </tr>
+		           
+		           
+		           <tr>
+		               <th colspan='6'><img class='w-200' src='images/scanner.png' /></th>
+		           </tr>
+		           <tr> 
+		               <td colspan='6' class='text-center thank_you_note'>*** Thank You !!! Visit Again !!! ***</td>
+		            </tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="table-clear">the third div</div>
+	<button id="myButton">Click Me</button>
+
     <script>
-      function printData() {
-    var printContent = document.querySelector('.table-class');
-
-    // Hide the print button
-    document.getElementById('print-button').style.display = 'none';
-
-    // Show the content to be printed
-    printContent.style.visibility = 'visible';
-
-    // Print the page
+window.onload = function() {
+  var element = document.querySelector('.table-class');
+  element.style.display = "none";
+  
+  var button = document.getElementById("myButton");
+  button.addEventListener("click", function() {
+    element.style.display = "block";
+    var printStyle = document.createElement('style');
+    printStyle.setAttribute('media', 'print');
+    printStyle.innerHTML = '.table-class { display: block; } .table-clear { display: none; }';
+    document.head.appendChild(printStyle);
     window.print();
+   
+    element.style.display = "none";
+  });
+};
 
-    // Reset the visibility and show the print button
-    printContent.style.visibility = 'hidden';
-    document.getElementById('print-button').style.display = 'block';
-}
+
+    //   function printData() {
+    // var printContent = document.querySelector('.table-class');
+
+    // // Hide the print button
+    // document.getElementById('print-button').style.display = 'none';
+
+
+    // // Show the content to be printed
+    // printContent.style.visibility = 'visible';
+
+    // // Print the page
+    // window.print();
+
+    // // Reset the visibility and show the print button
+    // // printContent.style.visibility = 'hidden';
+    // document.getElementById('print-button').style.display = 'block';
+
+	//   }
+	// //new button
+    // let x = () => {
+		
+	// }
+	
+	
+
+	
     </script>
 </body>
 </html>

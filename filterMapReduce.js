@@ -12,7 +12,7 @@ arr.filter((value) => {return value%2!=0})//first it filters the array by condit
                .reduce((a,b) =>{return a+b;})//reduces the array by previous and current value
       console.log(res);
 
-    console.log('---------------------------');
+    console.log('-------------------');
 
    let arrfil =[23,75,13,16,15]
    let f1= arrfil.filter((age) => age>18);
