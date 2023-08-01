@@ -6,7 +6,7 @@ arr.filter((value) => {return value%2!=0})//first it filters the array by condit
    })
 
    console.log("--------------------");
-
++
     let res=arr.filter((n) => {return n%2==0})//first it filters the array by condition
                .map((m1) => {return m1*2})//map picks the value and change it by condition
                .reduce((a,b) =>{return a+b;})//reduces the array by previous and current value
