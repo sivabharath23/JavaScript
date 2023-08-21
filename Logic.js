@@ -19,3 +19,4 @@ let arr=[1,5,3,5,2,16,7]
             console.log(arr[i])
         }
     }
+    

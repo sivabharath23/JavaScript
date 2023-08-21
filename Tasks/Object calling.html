@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="trail1"></p>
+    <p id="trail2"></p>
+    <p id="trail3"></p>
+    <p id="trail4"></p>
+    <p id="trail5"></p>
+<script>
+    const objectName  = {
+        Name : "siva",
+        id : 19104148,
+        age : 21,
+    }
+
+    const objectName2 = {
+        Name : "siva",
+        id : 19104148,
+        age : 21,
+        Fname : function() {
+            return this.Name + this.age + this.id ;
+        }
+    }
+
+    let A = "";
+        for (const x in objectName) {
+            A += " " + objectName[x];
+        }
+
+
+    const B = Object.values(objectName);
+
+    document.getElementById('trail1').innerHTML = objectName; 
+    document.getElementById('trail2').innerHTML = objectName.Name + " "+ objectName.age;
+    document.getElementById('trail3').innerHTML = B; 
+    document.getElementById('trail4').innerHTML = A;// using loop
+    document.getElementById('trail5').innerHTML = objectName2.Fname();
+    
+</script>
+</body>
+</html>

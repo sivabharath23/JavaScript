@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Successfully</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body {
+    background-color: #f4f4f4;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .Successfull-card  {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;  
+  }
+  .Verify-card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+  .fa-check-circle {
+    font-size: 80px;
+    color: #41ad49
+  }
+  .success-message {
+    font-size: 18px;
+    color: #333;
+  }
+  .loader-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
+</head>
+<body>
+  <div class="loader-container">
+    <div class="loader"></div>
+  </div>
+<div class="container">
+  <div class="Successfull-card d-block">
+    <h2 >Thanks For Signing Up!</h2>
+    <img src="/src/tick-removebg-preview.png" width="100px" height="100px">
+    <p class="success-message">Account Registration Successfully </p>
+    <a href="/login.html"><button class="btn btn-primary ">Click here to Login</button></a>
+  </div>
+  <div class="Verify-card d-block">
+    <h2 >Verify Your Email</h2>
+    <p style="margin-bottom: 0px !important;">check your email & click the link to activate your account</p>
+    <img src="/src/email-1.png" width="150px" height="150px">
+  <!-- </div>
+    <a href="/login.html"><button class="btn btn-primary pt-2">Resend Email</button></a>
+  </div> -->
+</div>
+</body>
+<script>
+  // Hide the loader after 2 seconds (2000 milliseconds)
+  setTimeout(function() {
+    document.querySelector('.loader-container').style.display = 'none';
+  }, 1500);
+</script>
+</html>

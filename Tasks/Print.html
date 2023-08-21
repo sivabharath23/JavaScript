@@ -6,10 +6,13 @@
 		<p  onclick="style.display='none'">this is duplicate content so please click</p> 
 		<input type="submit" value="Print" onclick="printing()" id="print-btn">
 		<script>
-			let printing = () =>{
+			
+			const printing = () =>{
+				setTimeout(()=> {
 				 document.getElementById('print-btn').style.display = "none";//hiding the print button while printing
 				window.print()
-			}
+			},2000)
+		}
 		</script>
 	</body>
 </html>
