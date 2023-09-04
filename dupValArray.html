@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+<h1 id="demo1"></h1>
+<script>
+const array = [10, 2, 33, 4, 5,100,1000,1];
+
+       let arry = array.forEach((i)=> {return Math.max(i)})
+        console.log(arry);
+  Math.min(...array)
+
+    var arr = ["january", "february", "january",
+    "march","february","march"];   
+     function getDuplicates(arr) {
+        return arr.filter((item, index)=> arr.indexOf(item) !== index);
+     }    
+     console.log(getDuplicates(arr)); 
+
+
+     var anumrr = ["1", "2", "3",  "5", "5", "2"];   
+    function removeDuplicates(anumrr) { 
+        return [...new Set(anumrr)]; 
+     } 
+
+    console.log(removeDuplicates(anumrr)); 
+
+</script>
+
+</body>
+</html>

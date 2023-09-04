@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Create Object from JSON String</h2>
+<p id="demo"></p>
+<script>
+const Persons = [{name:"Sivabharath" , surname:"siva", age:20},
+                 {name:"Ramji" , surname:"Ram"},
+                 {name:"Alex" , surname:"Crew"},
+                ];
+
+const Persons1 = [{name:"Sameer" , surname:"Biswal"},
+                 {name:"Ranjan" , surname:"Singh"},
+                 {name:"Alex" , surname:"Crew"},
+                ];
+                
+                [Persons[0],Persons[1]]=[Persons[1],Persons[0]];//swapping array objects
+
+                [Persons1[0],Persons1[2]]=[Persons1[2],Persons1[0]];
+
+                console.table(Persons);
+                console.table(Persons1);
+</script>
+</body>
+</html>
