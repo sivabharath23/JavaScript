@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<style>
+  .box {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<body>
+  <div class="box">
+    <div class="p-5 bg-light rounded shadow-lg">
+      <form action="Registration.html">
+        <label>userName <span class="text-danger">*</span></label>
+        <input class="form-control" type="text" id="userName" required />
+        <br />
+
+        <label>password <span class="text-danger">*</span></label>
+        <input class="form-control" type="password" id="pswd" required />
+        <br />
+
+        <label>mobile number <span class="text-danger">*</span></label>
+        <input class="form-control" type="tel" id="mblno" required />
+        <br />
+        <label>email <span class="text-danger">*</span></label>
+        <input class="form-control" type="email" id="email" required />
+        <br />
+
+        <input type="radio" id="male" name="gender" value="Male" />
+        <label>Male </label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label>Female </label>
+
+        <br />
+
+        <div class="form-group">
+          <input type="radio" id="course1" name="course" value="FE" />
+          <label>Full stack</label>
+          <input type="radio" id="course2" name="course" value="DA" />
+          <label>Data Analytics</label>
+        </div>
+        <br />
+
+        <label>Duration</label>
+        <select class="form-control" required>
+          <option selected disabled>select Duration</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+
+        <br />
+
+        <button class="btn btn-primary" type="submit" onclick="submitValidation()">
+          Create Account
+        </button>
+      </form>
+    </div>
+  </div>
+  <script>
+    const submitValidation = () => {
+      var userVal = document.getElementById("userName").value;
+      var pswdVal = document.getElementById("pswd").value;
+      var mblNo = document.getElementById("mblno").value;
+      var emailVal = document.getElementById("email").value;
+
+      console.log("submit button working");
+
+      if (!userVal || !pswdVal || !mblNo || !emailVal) {
+        alert("Please Enter all the fields");
+        return;
+      }
+
+      if (userVal !== "sivabharath") {
+        console.log("incorrect UserName");
+        alert("incorrect UserName");
+        return;
+      }
+
+      if (pswdVal !== "123456") {
+        console.log("incorrect password");
+        alert("incorrect Password");
+        return;
+      }
+
+      console.log("Before last if condition");
+      if (userVal === "sivabharath" && pswdVal === "123456") {
+          console.log("Inside last if condition");
+          console.log("username and password matching");
+      }
+      console.log("After last if condition");
+    };
+
+    
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
